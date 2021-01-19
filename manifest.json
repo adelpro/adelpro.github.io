@@ -1,14 +1,14 @@
 
 
 { 
-    "name":"PWA Tutorial", 
-    "short_name":"PWA", 
+    "name":"Quran over IPFS", 
+    "short_name":"QuranIPF", 
     "start_url":"index.html", 
     "display":"standalone", 
     "background_color":"#5900b3", 
     "theme_color":"black", 
     "scope": ".", 
-    "description":"This is a PWA tutorial.", 
+    "description":"Stream quran over TPFS interplanatery file system protocol.", 
     "icons":[ 
     { 
     "src":"android-chrome-192x192.png",                       
