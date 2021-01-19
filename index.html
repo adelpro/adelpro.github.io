@@ -40,22 +40,20 @@
         </ul>
       </nav>
       <div class="container"></div>
-   <div id="app"></div>
+   <div id="app">
 <!--cplayer-->
+ <script src="https://cdn.jsdelivr.net/npm/cplayer/dist/cplayer.min.js" />
 <script>
   let player = new cplayer({
     element: document.getElementById('app'),
-     // shows playlist
-    showPlaylist: true,
     playlist: [ 
-{ poster: '',
-  name: '1 al-faatiHah سورة الفاتحة',
+{ name: '1 alfaatiHah',
   src: 'https://ipfs.io/ipfs/QmYSLGBcVvoCdX9ubqYykMGC3JEFZYJXT3pJdnjb4JQjnm/Quran_Saad_Algamdi-001.mp3',
 },
  ]
   })
 </script>      
-  
+ </div> 
   </main>
 
   <script> 
