@@ -5,6 +5,7 @@
     "short_name":"QuranIPF", 
     "start_url":"index.html", 
     "display":"standalone", 
+    "orientation": "portrait-primary",
     "background_color":"#5900b3", 
     "theme_color":"black", 
     "scope": ".", 
