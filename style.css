@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300&display=swap");
+
+main {
+  max-width: 450px;
+  overflow: hidden;
+  background-color: #fdfcfc;
+  border-radius: 7px;
+  box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.505);
+  margin: 50px auto;
+  font-family: "Sora";
+}
+
+#background__vanta {
+  overflow: hidden;
+}
+
+.top-card {
+  max-width: 350px;
+  height: inherit;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+}
+
+.top-card img {
+  width: 90%;
+  flex: 1;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  padding: 2px;
+  border: solid 1px #302f2f;
+}
+
+.top-card img:hover {
+  border: solid 1px #302f2f;
+  border-radius: 50%;
+}
+
+li {
+  list-style: none;
+}
+
+li:before {
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.2rem;
+  content: "\2713";
+}
+
+.top-card .menu-icon {
+  position: relative;
+  bottom: 13.7em;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.top-card .menu-icon .item1 {
+  margin-left: 10px;
+  margin-top: 15px;
+  color: red;
+}
+
+.top-card .menu-icon .item2 {
+  float: right;
+  margin-right: 20px;
+  margin-top: -10px;
+  color: blue;
+}
+
+h1 {
+  padding: 5px;
+  margin-top: 30px;
+  color: #111;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  font-weight: bold;
+}
+
+h2 {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  row-gap: 10px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+
+  border-bottom: 1px solid #111;
+}
+
+h2::before,
+h2::after {
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+
+p {
+  color: #6d6d6d;
+}
+
+.middle-card,
+footer {
+  margin: 5px 25px;
+}
+
+.middle-card {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+footer .a {
+  font-size: 0.7rem;
+}
+
+.facebook:hover {
+  color: #3b5999;
+}
+
+.twitter:hover {
+  color: #55acee;
+}
+
+.google:hover {
+  color: #dd4b39;
+}
+
+.github:hover {
+  color: #302f2f;
+}
+.email:hover {
+  color: #0077b5;
+}
+.messenger:hover {
+  color: #0077b5;
+}
+
+footer .links {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px 0;
+}
+
+button {
+  width: 110px;
+  height: 37px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: #1990cc;
+  font-size: 15px;
+  border: 2px solid #1990cc;
+  color: white;
+  background: dodgerblue;
+}
+
+button:last-child {
+  margin-left: 40px;
+  border: 2px solid #1990cc;
+  background: white;
+  color: black;
+}
+
+.buttonhover:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  border-color: #000000;
+}
