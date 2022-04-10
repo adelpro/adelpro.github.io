@@ -2,11 +2,15 @@
 Portfilio landing page
 
 ## Futures
-- Minimalist
-- Card design
-- 3d background animation
-- Social media icons
-- Styled animed icon
+✓ Minimalist
+
+✓ Card design
+
+✓ 3d background animation
+
+✓ Social media icons
+
+✓ Styled animed icon
 
 ## My projects:
 
