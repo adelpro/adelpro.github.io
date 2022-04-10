@@ -1,6 +1,12 @@
-## About me
+## About 
+Portfilio landing page
 
-Web applications developer (HTML │ CSS │ JS ReactJS │ React native)
+##Futures
+- Minimalist
+- Card design
+- 3d background animation
+- Social media icons
+- Styled animed icon
 
 ## My projects:
 
