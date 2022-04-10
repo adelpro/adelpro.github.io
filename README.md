@@ -22,7 +22,7 @@ Portfilio landing page
 
 ✓ Check-Hadith الباحث في الحديث ([Website](http://adelpro.github.io/check-hadith)│[GitHub](https://github.com/adelpro/Check-Hadith))
 
-✓ Website ([link](https://abbadi-houssam.web.app))
+✓ Responsive website ([link](https://abbadi-houssam.web.app))
 
 ✓ Saidaliati (my pharmacy) ([link](https://saidaliati.web.app))
 
