@@ -1,7 +1,7 @@
 ## About 
 Portfilio landing page
 
-##Futures
+## Futures
 - Minimalist
 - Card design
 - 3d background animation
