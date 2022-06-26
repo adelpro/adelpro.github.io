@@ -1,5 +1,5 @@
 ## About 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adelpro)](https://github.com/anuraghazra/github-readme-stats&count_private=true)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adelpro&show_icons=true&theme=radical)
 
 ## Futures
 ✓ Minimalist
