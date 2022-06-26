@@ -1,5 +1,5 @@
 ## About 
-Portfilio landing page
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=adelpro)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Futures
 ✓ Minimalist
