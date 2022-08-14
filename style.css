@@ -188,12 +188,22 @@ button:last-child {
 details > summary {
     list-style-type: '▶️';
 }
+details > summary::marker {
+  color: red;
+   margin-right:20;
+  backround: red;
+}
+
 
 details[open] > summary {
     list-style-type: '🔽';
 }
 details[open] > summary::marker {
     margin-right:20;
+}
+details > summary::marker {
+  color: red;
+   margin-right:20;
 }
 
 details {
@@ -205,3 +215,4 @@ details {
 details[open] > summary {
     margin-bottom: 0.5rem;
 }
+
