@@ -140,12 +140,9 @@ footer .a {
   color: #55acee;
 }
 
-.google:hover {
-  color: #dd4b39;
-}
 
 .github:hover {
-  color: #302f2f;
+  color: #cccc;
 }
 .email:hover {
   color: #0077b5;
