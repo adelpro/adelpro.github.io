@@ -185,3 +185,20 @@ button:last-child {
   border-radius: 5px;
   border-color: #000000;
 }
+details > summary {
+    list-style-type: '▶️';
+}
+
+details[open] > summary {
+    list-style-type: '🔽';
+}
+
+details {
+    border: 1px solid gray;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
