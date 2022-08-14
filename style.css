@@ -83,7 +83,7 @@ h1 {
   font-weight: bold;
 }
 
-h2 {
+h2,detail > summary {
   display: grid;
   grid-template-rows: 1fr auto 1fr;
   row-gap: 10px;
@@ -188,22 +188,14 @@ button:last-child {
 details > summary {
     list-style-type: '▶️';
 }
+details[open] > summary {
+    list-style-type: '🔽';
+   list
+}
 details > summary::marker {
   color: red;
    margin-right:20;
   backround: red;
-}
-
-
-details[open] > summary {
-    list-style-type: '🔽';
-}
-details[open] > summary::marker {
-    margin-right:20;
-}
-details > summary::marker {
-  color: red;
-   margin-right:20;
 }
 
 details {
