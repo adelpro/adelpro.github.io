@@ -34,7 +34,7 @@
 
 ### React native (EXPO):
 
-✓ Check-Hadith-native الباحث في الحديث ([link](https:check-hadith.web.app)│[GitHub](https://github.com/adelpro/Check-Hadith-native))
+✓ Check-Hadith-native الباحث في الحديث ([link](https://check-hadith.web.app)│[GitHub](https://github.com/adelpro/Check-Hadith-native))
 
 
 ## Contact me
