@@ -1,5 +1,5 @@
 /* Google Font Import */
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300;400;600&display=swap");
 
 :root {
   /* Modern color palette */
@@ -8,7 +8,8 @@
   --text-secondary: #6d6d6d;
   --border-color: rgba(0, 0, 0, 0.1);
   --shadow-color: rgba(0, 0, 0, 0.1);
-  
+  --accent-color: #3498db;
+
   /* Social Media Colors */
   --facebook-color: #3b5999;
   --twitter-color: #55acee;
@@ -27,15 +28,25 @@ body {
   font-family: 'Sora', sans-serif;
   background-color: #f4f4f4;
   line-height: 1.6;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+#background__vanta {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 main {
-  max-width: 450px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
   background-color: var(--background-light);
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
-  margin: 50px auto;
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -43,60 +54,151 @@ main:hover {
   transform: translateY(-5px);
 }
 
-/* Profile Image Styling */
-.top-card {
-  max-width: 350px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
+/* Hero Section */
+.hero {
+  background-color: var(--accent-color);
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
 }
 
-.top-card img {
-  width: 250px;
-  height: 250px;
+.hero img {
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--text-primary);
+  border: 3px solid white;
   transition: all 0.4s ease;
+  margin-bottom: 20px;
 }
 
-.top-card img:hover {
+.hero img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Typography */
-h1 {
-  padding: 15px 0;
-  color: var(--text-primary);
-  font-size: 2.2rem;
-  font-weight: 600;
-  text-align: center;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Content Sections */
+.middle-card {
+  padding: 0 40px 40px;
+}
+
+/* Project list styles */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
-h1::before, h1::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--text-primary);
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-h1::before {
-  top: 0;
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--accent-color);
 }
 
-h1::after {
-  bottom: 0;
+.project-card p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: var(--text-primary);
+}
+
+/* Contact section */
+.contact-me {
+  background-color: #f8f8f8;
+  padding: 40px;
+  text-align: center;
+}
+
+.social-icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.facebook:hover {
+  color: var(--facebook-color);
+}
+
+.twitter:hover {
+  color: var(--twitter-color);
+}
+
+.github:hover {
+  color: var(--github-color);
+}
+
+.email:hover {
+  color: var(--email-color);
+}
+
+.messenger:hover {
+  color: var(--messenger-color);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 h2 {
-  text-align: center;
-  margin: 20px 0;
+  font-size: 1.8rem;
+  margin: 30px 0 20px;
   position: relative;
-  color: var(--text-primary);
 }
 
 h2::after {
@@ -107,91 +209,216 @@ h2::after {
   transform: translateX(-50%);
   width: 50px;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: var(--accent-color);
 }
 
-/* List Styling */
-li {
-  list-style: none;
-  position: relative;
-  padding-left: 25px;
-  margin: 10px 0;
-}
-
-li::before {
-  content: '✓';
+/* Accessibility and Keyboard Navigation Styles */
+.skip-link {
   position: absolute;
+  top: -40px;
   left: 0;
-  color: #4CAF50;
-  font-weight: bold;
+  background: #000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
 }
 
-/* Social Icons */
-.social-icon {
-  font-size: 1.5rem;
-  margin: 0 10px;
-  color: rgba(0, 0, 0, 0.7);
-  transition: color 0.3s ease, transform 0.2s ease;
+.skip-link:focus {
+  top: 0;
 }
 
-.social-icon:hover {
-  transform: scale(1.2);
+.project-card:focus,
+.project-card:focus-within {
+  outline: 2px solid var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
 }
 
-.facebook:hover { color: var(--facebook-color); }
-.twitter:hover { color: var(--twitter-color); }
-.github:hover { color: var(--github-color); }
-.email:hover { color: var(--email-color); }
-.messenger:hover { color: var(--messenger-color); }
+.project-card:focus-within {
+  outline-offset: 2px;
+}
 
-/* Details/Summary Styling */
-details {
-  border: 1px solid var(--border-color);
+a:focus,
+button:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Add focus styles for social icons */
+.social-icon:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Add visual feedback for keyboard navigation */
+.project-card:focus-within::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--accent-color);
   border-radius: 8px;
-  margin: 15px 0;
-  padding: 10px;
+  pointer-events: none;
 }
 
-details > summary {
+/* Ensure interactive elements have proper focus states */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Add a subtle transition for focus states */
+a,
+button,
+input,
+textarea,
+select,
+.project-card {
+  transition: outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Ensure proper color contrast for links */
+a {
+  color: #0000EE;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+/* Add styles for the skip link when it's visible */
+.skip-link:focus {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Filter Section Styles */
+.filter-section {
+  margin: 0 40px 30px;
+  /* Same margin as .middle-card */
+  padding: 30px 40px;
+  /* Same padding as .middle-card */
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.filter-section:hover {
+  transform: translateY(-5px);
+}
+
+#tag-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#tag-list button {
+  background-color: #f4f4f4;
+  color: #007BFF;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: 600;
-  padding: 10px;
   transition: background-color 0.3s ease;
 }
 
-details > summary:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+#tag-list button:hover {
+  background-color: #007BFF;
+  color: #fff;
 }
 
-details > summary::marker {
-  content: '▶️';
-  font-size: 1rem;
+#tag-list button.active {
+  background-color: #007BFF;
+  color: #fff;
 }
 
-details[open] > summary::marker {
-  content: '🔽';
-}
-
-/* Utility Classes */
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-secondary {
-  color: var(--text-secondary);
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   main {
-    width: 95%;
-    margin: 20px auto;
+    border-radius: 0;
   }
-  
-  .top-card img {
-    width: 200px;
-    height: 200px;
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .middle-card {
+    padding: 30px 20px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  #tag-list button {
+    padding: 6px 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  #background__vanta {
+    padding: 20px 10px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .middle-card {
+    padding: 20px 15px;
+  }
+
+  .contact-me {
+    padding: 30px 20px;
+  }
+
+  .social-icon {
+    font-size: 1.3rem;
+  }
+
+  #tag-list {
+    justify-content: center;
   }
 }
