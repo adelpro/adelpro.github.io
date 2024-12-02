@@ -1,215 +1,197 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300&display=swap");
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300;600&display=swap");
+
+:root {
+  /* Modern color palette */
+  --background-light: #fdfcfc;
+  --text-primary: #111;
+  --text-secondary: #6d6d6d;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Social Media Colors */
+  --facebook-color: #3b5999;
+  --twitter-color: #55acee;
+  --github-color: #333;
+  --email-color: #0077b5;
+  --messenger-color: #0077b5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
 
 main {
   max-width: 450px;
   overflow: hidden;
-  background-color: #fdfcfc;
-  border-radius: 7px;
-  box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.505);
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
   margin: 50px auto;
-  font-family: "Sora";
+  transition: transform 0.3s ease;
 }
 
-#background__vanta {
-  overflow: hidden;
+main:hover {
+  transform: translateY(-5px);
 }
 
+/* Profile Image Styling */
 .top-card {
   max-width: 350px;
-  height: inherit;
-  padding: 10px;
-  margin: auto;
+  margin: 20px auto;
   display: flex;
+  justify-content: center;
 }
 
 .top-card img {
-  width: 90%;
-  flex: 1;
-  margin: auto;
-  transition: all 0.3s ease-in-out;
-  border: none;
-  border-radius: 10px;
-  padding: 2px;
-  border: solid 1px #302f2f;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--text-primary);
+  transition: all 0.4s ease;
 }
 
 .top-card img:hover {
-  border: solid 1px #302f2f;
-  border-radius: 50%;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-li {
-  list-style: none;
-}
-
-li:before {
-  padding: 5px;
-  margin: 5px;
-  font-size: 1.2rem;
-  content: "\2713";
-}
-
-.top-card .menu-icon {
-  position: relative;
-  bottom: 13.7em;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-.top-card .menu-icon .item1 {
-  margin-left: 10px;
-  margin-top: 15px;
-  color: red;
-}
-
-.top-card .menu-icon .item2 {
-  float: right;
-  margin-right: 20px;
-  margin-top: -10px;
-  color: blue;
-}
-
+/* Typography */
 h1 {
-  padding: 5px;
-  margin-top: 30px;
-  color: #111;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
+  padding: 15px 0;
+  color: var(--text-primary);
+  font-size: 2.2rem;
+  font-weight: 600;
   text-align: center;
-  border-top: 2px solid #111;
-  border-bottom: 2px solid #111;
-  font-weight: bold;
+  position: relative;
+}
+
+h1::before, h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--text-primary);
+}
+
+h1::before {
+  top: 0;
+}
+
+h1::after {
+  bottom: 0;
 }
 
 h2 {
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  row-gap: 10px;
   text-align: center;
-  justify-content: center;
-  justify-items: center;
-  margin-top: 10px;
-  font-weight: bold;
-
-  border-bottom: 1px solid #111;
+  margin: 20px 0;
+  position: relative;
+  color: var(--text-primary);
 }
 
-h2::before,
 h2::after {
-  width: 100%;
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
   height: 2px;
-  content: "";
-  border-radius: 50%;
-  font-size: 0.7rem;
+  background-color: var(--text-primary);
 }
 
-p {
-  color: #6d6d6d;
+/* List Styling */
+li {
+  list-style: none;
+  position: relative;
+  padding-left: 25px;
+  margin: 10px 0;
 }
 
-.middle-card,
-footer {
-  margin: 5px 25px;
+li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
 }
 
-.middle-card {
-  margin-bottom: 30px;
-}
-
-footer {
-  text-align: center;
-}
-
+/* Social Icons */
 .social-icon {
   font-size: 1.5rem;
-  padding: 10px;
-  color: rgba(0, 0, 0, 0.9);
+  margin: 0 10px;
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-footer .a {
-  font-size: 0.7rem;
+.social-icon:hover {
+  transform: scale(1.2);
 }
 
-.facebook:hover {
-  color: #3b5999;
-}
+.facebook:hover { color: var(--facebook-color); }
+.twitter:hover { color: var(--twitter-color); }
+.github:hover { color: var(--github-color); }
+.email:hover { color: var(--email-color); }
+.messenger:hover { color: var(--messenger-color); }
 
-.twitter:hover {
-  color: #55acee;
-}
-
-
-.github:hover {
-  color: #cccc;
-}
-.email:hover {
-  color: #0077b5;
-}
-.messenger:hover {
-  color: #0077b5;
-}
-
-footer .links {
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-top: 10px;
-  padding: 8px 0;
-}
-
-button {
-  width: 110px;
-  height: 37px;
-  margin-top: 10px;
-  border-radius: 2px;
-  background: #1990cc;
-  font-size: 15px;
-  border: 2px solid #1990cc;
-  color: white;
-  background: dodgerblue;
-}
-
-button:last-child {
-  margin-left: 40px;
-  border: 2px solid #1990cc;
-  background: white;
-  color: black;
-}
-
-.buttonhover:hover {
-  cursor: pointer;
-  border-radius: 5px;
-  border-color: #000000;
-}
-details > summary {
-    list-style-type: '▶️';
-}
-details[open] > summary {
-    list-style-type: '🔽';
-   list
-}
-details > summary{
-  font-weight: bold;
-  cursor:pointer;
-  margin:5px;
-  padding:5px;
-}
-details > summary::marker {
-font-size:
-}
-
+/* Details/Summary Styling */
 details {
-    border: 1px solid gray;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin: 15px 0;
+  padding: 10px;
 }
 
-details[open] > summary {
-    margin-bottom: 0.5rem;
+details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.center{
-display: flex;
-justify-content: center;
+details > summary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+details > summary::marker {
+  content: '▶️';
+  font-size: 1rem;
+}
+
+details[open] > summary::marker {
+  content: '🔽';
+}
+
+/* Utility Classes */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  main {
+    width: 95%;
+    margin: 20px auto;
+  }
+  
+  .top-card img {
+    width: 200px;
+    height: 200px;
+  }
 }

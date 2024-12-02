@@ -1,200 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
-  <title>Profile: BENYAHIA Adel</title>
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-  />
-  <link rel="stylesheet" href="./style.css" />
-  <meta name="yandex-verification" content="9075214a9a0b793a" />
-  <meta name="msvalidate.01" content="EEED389712803AACF544071A668E122B" />
-  <script type="application/ld+json">
-{
-   "@context":"https://schema.org",
-   "@type":"Person",
-   "name":"BENYAHIA Adel",
-   "nationality":"Algeien",
-   "description":"Pharmacyst",
-   "birthDate":"April 4, 1981",
-   "birthPlace":"Barika City, Batna"
-}
-</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adel BENYAHIA - Web Developer Portfolio</title>
+  
+  <!-- Enhanced meta tags for SEO and social sharing -->
+  <meta name="description" content="Portfolio of Adel BENYAHIA, Web Applications Developer specializing in React, JavaScript, and modern web technologies" />
+  <meta name="author" content="Adel BENYAHIA" />
+  <meta property="og:title" content="Adel BENYAHIA - Web Developer Portfolio" />
+  <meta property="og:description" content="Explore the portfolio of Adel BENYAHIA, a skilled web applications developer" />
+  <meta property="og:type" content="profile" />
+  
+  <!-- Favicon with multiple formats -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Performance optimization: Preload critical assets -->
+  <link rel="preload" href="profile.png" as="image">
+  
+  <!-- Modern CSS approach with optional dark mode support -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dark-mode.css" media="(prefers-color-scheme: dark)" />
+  
+  <!-- Performance and accessibility -->
+  <link rel="dns-prefetch" href="https://unpkg.com">
 </head>
-
 <body>
-  <div id="background__vanta">
+  <div class="container">
+    <header>
+      <div class="profile-header">
+        <img 
+          src="profile.png" 
+          alt="Adel BENYAHIA Profile Picture" 
+          class="profile-image"
+          width="200" 
+          height="200"
+          loading="lazy"
+        />
+        <h1>Adel BENYAHIA</h1>
+        <p class="subtitle" aria-label="Professional Role">Web Applications Developer</p>
+        <div class="tech-stack" aria-label="Technology Skills">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript (ES6+)</span>
+          <span>React</span>
+          <span>React Native</span>
+          <span>NextJS</span>
+        </div>
+      </div>
+    </header>
+    
     <main>
-      <section class="top-card">
-        <img src="./profile.png" alt="profile picture" />
-      </section>
-      <section class="middle-card">
-        <h1>BENYAHIA Adel</h1>
-        <div class="center"><p>Web applications developer</p></div>
-        <div class="center"><p>(HTML │ CSS │ JS | React)</p></div>
-        <details>
-        <summary> MY PROJECTS</summary>
-        <div>
-        <div class="center"><p>HTML │ CSS │ JS</p></div>
-        <ui>
-          <li>
-            Portfolio : (<a target="_blank" href="https://adelpro.github.io"
-              >link</a
-            >
-            |
-            <a
-              target="_blank"
-              href="https://www.github.com/adelpro/adelpro.github.io"
-              >GitHub</a
-            >)
-          </li>
-          <li>
-            check-hadith: (<a
-              target="_blank"
-              href="https://adelpro.github.io/check-hadith"
-              >link</a
-            >
-            |
-            <a
-              target="_blank"
-              href="https://www.github.com/adelpro/check-hadith"
-              >GitHub</a
-            >)
-          </li>
-             <li>
-            Quranipfs : (<a target="_blank" href="https://www.quranipfs.com"
-              >link</a
-            >
-            |
-            <a target="_blank" href="https://www.github.com/adelpro/Quranipfs"
-              >GitHub</a
-            >)
-          </li>
-        </ui>
-       <div class="center"><p>ReactJS</p></div>
-       <ui>
-          <li>
-            OpenAdhan: (<a target="_blank" href="https://www.openadhan.web.app"
-              >link</a
-            >
-            |
-            <a target="_blank" href="https://www.github.com/adelpro/Openadhan"
-              >GitHub</a
-            >)
-          </li>
-          <li>
-             Houssam Eldine Abbadi: (<a
-              target="_blank"
-              href="https://abbadi-houssam.web.app"
-              >link</a
-            > |
-            <a target="_blank" href="https://github.com/adelpro/abbadihoussam"
-              >GitHub</a
-            >)
-          </li>
-          <li>
-            Saidaliati: (<a
-              target="_blank"
-              href="https://saidaliati.web.app"
-              >link</a
-            >)
-          </li>
-          <li>
-            Elkiram-elbarara:(<a
-              target="_blank"
-              href="https://project-elkiram-elbarara.web.app"
-              >link</a
-            >)
-          </li>
-        </ui>
-         <div class="center"><p>React native</p></div>
-          <ui>
-             <li>
-            Check-hadith-native:(<a
-              target="_blank"
-              href="https://check-hadith.web.app"
-              >link</a
-            >|
-            <a target="_blank" href="https://github.com/adelpro/check-hadith"
-              >GitHub</a
-            >)
-          </li>
-          </ui>
+      <section class="projects">
+        <h2>My Projects</h2>
+        <div class="project-categories">
+          <div class="category">
+            <h3>Web Fundamentals (HTML, CSS, JS)</h3>
+            <ul>
+              <li>
+                <a href="https://adelpro.github.io" target="_blank" rel="noopener noreferrer">
+                  Personal Portfolio
+                </a>
+                <a href="https://github.com/adelpro/adelpro.github.io" class="github-link" aria-label="Portfolio GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://adelpro.github.io/check-hadith" target="_blank" rel="noopener noreferrer">
+                  Check Hadith
+                </a>
+                <a href="https://github.com/adelpro/check-hadith" class="github-link" aria-label="Check Hadith GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.quranipfs.com" target="_blank" rel="noopener noreferrer">
+                  Quranipfs
+                </a>
+                <a href="https://github.com/adelpro/Quranipfs" class="github-link" aria-label="Quranipfs GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="category">
+            <h3>React Projects</h3>
+            <ul>
+              <li>
+                <a href="https://www.openadhan.web.app" target="_blank" rel="noopener noreferrer">
+                  OpenAdhan
+                </a>
+                <a href="https://github.com/adelpro/Openadhan" class="github-link" aria-label="OpenAdhan GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://abbadi-houssam.web.app" target="_blank" rel="noopener noreferrer">
+                  Houssam Eldine Abbadi
+                </a>
+                <a href="https://github.com/adelpro/abbadihoussam" class="github-link" aria-label="Houssam Eldine Abbadi GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://saidaliati.web.app" target="_blank" rel="noopener noreferrer">
+                  Saidaliati
+                </a>
+              </li>
+              <li>
+                <a href="https://project-elkiram-elbarara.web.app" target="_blank" rel="noopener noreferrer">
+                  Elkiram-elbarara
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="category">
+            <h3>React Native Projects</h3>
+            <ul>
+              <li>
+                <a href="https://github.com/adelpro/open-mushaf-native" target="_blank" rel="noopener noreferrer">
+                  Open Mushaf Native
+                </a>
+                <a href="https://github.com/adelpro/open-mushaf-native" class="github-link" aria-label="Open Mushaf Native GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://check-hadith.web.app" target="_blank" rel="noopener noreferrer">
+                  Check Hadith Native
+                </a>
+                <a href="https://github.com/adelpro/check-hadith" class="github-link" aria-label="Check Hadith Native GitHub Repository">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="category">
+            <h3>Next.js Projects</h3>
+            <ul>
+              <li>
+                <a href="https://md-pompe.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  MD-Pompe
+                </a>
+              </li>
+              <li>
+                <a href="https://sliceofdev.com/" target="_blank" rel="noopener noreferrer">
+                  Sliceofdev
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-           <div class="center"><p>NextJS</p></div>
-          <ui>
-             <li>
-            MD-Pompe:(<a
-              target="_blank"
-              href="https://md-pompe.vercel.app/"
-              >link</a
-            >)
-               
-          </li>
-                     <li>
-            Sliceofdev:(<a
-              target="_blank"
-              href="https://https://https://sliceofdev.com/"
-              >link</a
-            >)
-              
-          </li>
-          </ui>
-        </div>
-        </details> 
-        
-        <div>
-        <h2>CONTACT ME</h2>
-          <div class="center">
-        <a
-          target="_blank"
-          href="https://www.fb.com/adel.benyahia"
-          class="social-icon facebook"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.twitter.com/adelpro"
-          class="social-icon twitter"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.github.com/adelpro"
-           rel="noreferrer"
-          class="social-icon github"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          target="_blank"
-          href="mailto:adelpro@gmail.com"
-          rel="noreferrer"
-          class="social-icon email"
-          ><i class="fa fa-envelope"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://m.me/adel.benyahia"
-          rel="noreferrer"
-          class="social-icon messenger"
-          ><i class="fab fa-facebook-messenger"></i
-        ></a>
-        </div>             
       </section>
     </main>
+    
+    <footer>
+      <div class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="social-links">
+          <a href="https://www.github.com/adelpro" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/adelpro" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          
+          <a href="https://www.twitter.com/adelpro" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </svg>
+          </a>
+          
+          <a href="mailto:adelpro@gmail.com" aria-label="Send Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="contact-info">
+          <p>Email: <a href="mailto:adelpro@gmail.com">adelpro@gmail.com</a></p>
+        </div>
+      </div>
+    </footer>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
+  
+  <!-- Performance optimization: Load scripts asynchronously -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" async></script>
   <script>
-    VANTA.WAVES({
-      el: "#background__vanta",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
+    // Optional: Add typing effect to subtitle
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof Typed !== 'undefined') {
+        new Typed('.subtitle', {
+          strings: [
+            'Web Applications Developer', 
+            'React Specialist', 
+            'Open Source Enthusiast',
+            'Mobile App Developer'
+          ],
+          typeSpeed: 50,
+          backSpeed: 50,
+          loop: true
+        });
+      }
     });
   </script>
 </body>
+</html>
