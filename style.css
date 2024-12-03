@@ -260,13 +260,6 @@ a:visited {
   color: #551A8B;
 }
 
-/* Add styles for the skip link when it's visible */
-.skip-link:focus {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* Filter Section Styles */
 .filter-section {
   margin: 0 40px 30px;
@@ -352,6 +345,53 @@ a:visited {
   z-index: 1000;
   display: none;
 }
+
+/* Loader */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: var(--accent-color);
+  border: 2px solid;
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l6 2s infinite;
+}
+
+@keyframes l6 {
+  100% {
+    inset: 0
+  }
+}
+
+.fullscreen {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
