@@ -1,11 +1,22 @@
 export function getVisibleCards(projectCards) {
+  if (!projectCards) return;
   return Array.from(projectCards).filter(
     (card) => card.style.display !== "none"
   );
 }
 
 export function handleArrowNavigation(event, card, projectCards) {
+  if (!projectCards) return;
+  if (!card) return;
+
   switch (event.key) {
+    case "Enter":
+      event.preventDefault();
+      const liveDemo = card.querySelector("#live-demo");
+      if (liveDemo) {
+        window.open(liveDemo.href, "_blank");
+      }
+      break;
     case "ArrowRight":
       event.preventDefault();
       const visibleCards = getVisibleCards(projectCards);

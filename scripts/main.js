@@ -10,15 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       card.focus();
     });
     card.setAttribute("tabindex", "0");
-    card.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        const link = card.querySelector("#live-demo"); // Select the link with ID 'live-demo'
-        if (link) {
-          window.location.href = link.href;
-        }
-      }
-    });
   });
 
   // Global escape key listener to return to first card
