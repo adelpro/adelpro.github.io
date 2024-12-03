@@ -55,6 +55,7 @@ main {
 .hero {
   background-color: var(--accent-color);
   padding: 60px 40px;
+  width: 100%;
   text-align: center;
   color: white;
 }
@@ -84,18 +85,33 @@ main {
   opacity: 0.9;
 }
 
-/* Content Sections */
-.middle-card {
-  padding: 0 40px 40px;
 
+/* Filter Section Styles */
+.filter-section {
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 }
 
-/* Project list styles */
+.filter-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Content Sections */
+
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  padding: 20px;
   justify-items: center;
 }
 
@@ -260,37 +276,12 @@ a:visited {
   color: #551A8B;
 }
 
-/* Filter Section Styles */
-.filter-section {
-  margin: 0 40px 30px;
-  /* Same margin as .middle-card */
-  padding: 30px 40px;
-  /* Same padding as .middle-card */
-  background-color: var(--background-light);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--shadow-color);
-  transition: transform 0.3s ease;
-
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
-}
-
-.filter-section:hover {
-  transform: translateY(-5px);
-}
-
-#tag-list {
+.tag-button-filter {
   display: flex;
   flex-wrap: wrap;
 }
 
 
-
-#tag-list button:hover {
-  background-color: #007BFF;
-  color: #fff;
-}
 
 .tag-button {
   background-color: #f4f4f4;
@@ -304,16 +295,33 @@ a:visited {
   transition: background-color 0.3s ease;
 }
 
+.tag-button:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
 .tag-button-active {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
   background-color: var(--accent-color);
   color: #fff;
 }
 
-
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+}
 
 .tags span {
   margin: 2px 5px;
-  padding: 5px 8px;
+  padding: 2px 5px;
   border-radius: 4px;
   background-color: #eee;
   color: var(--text-secondary);
@@ -345,53 +353,6 @@ a:visited {
   z-index: 1000;
   display: none;
 }
-
-/* Loader */
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 120px;
-  height: 22px;
-  border-radius: 20px;
-  color: var(--accent-color);
-  border: 2px solid;
-  position: relative;
-}
-
-.loader::before {
-  content: "";
-  position: absolute;
-  margin: 2px;
-  inset: 0 100% 0 0;
-  border-radius: inherit;
-  background: currentColor;
-  animation: l6 2s infinite;
-}
-
-@keyframes l6 {
-  100% {
-    inset: 0
-  }
-}
-
-.fullscreen {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
-}
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {

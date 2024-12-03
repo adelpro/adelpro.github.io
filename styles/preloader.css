@@ -1,0 +1,47 @@
+/* Loader */
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 20px;
+    color: var(--accent-color);
+    border: 2px solid;
+    position: relative;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: l6 2s infinite;
+}
+
+@keyframes l6 {
+    100% {
+        inset: 0
+    }
+}
+
+.fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: '#fff';
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}

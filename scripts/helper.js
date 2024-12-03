@@ -53,6 +53,9 @@ export function handleArrowNavigation(event, card, projectCards) {
 }
 
 export function filterProjects(tag, projectCards) {
+  if (!projectCards) {
+    return;
+  }
   projectCards.forEach((card) => {
     const tags = card
       .querySelector(".tags")

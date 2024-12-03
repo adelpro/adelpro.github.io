@@ -5,8 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BENYAHIA Adel - Web Applications Developer</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
-  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Preload stylesheet -->
+  <link rel="preload" href="/styles/preloader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for users with JavaScript disabled -->
+  <noscript>
+    <link rel="stylesheet" href="/styles/style.css">
+  </noscript>
+
   <link rel="canonical" href="https://adelpro.github.io" />
 
   <meta name="description"
@@ -99,12 +109,12 @@
 
 <body itemscope itemtype="http://schema.org/WebPage">
 
-  <div id="preloader" class="fullscreen hide">
+  <div id="preloader" class="fullscreen show">
     <div class="loader"></div>
   </div>
-  <div id="background__vanta" class="show">
+  <div id="background__vanta" class="hide">
 
-    <main id="main-content" class="show">
+    <main id="main-content" class="hide">
 
       <section class="hero" itemscope itemtype="http://schema.org/Person">
         <img src="./images/profile.webp" alt="Profile picture of BENYAHIA Adel" itemprop="image" loading="lazy" />
@@ -114,7 +124,7 @@
       </section>
       <section class="filter-section">
         <h2>Filter Projects by Tags</h2>
-        <div id="tag-list">
+        <div id="tag-list" class="tag-button-filter">
           <!-- Tags will be dynamically added here -->
         </div>
       </section>
@@ -126,7 +136,8 @@
             <h3 itemprop="name">Portfolio</h3>
             <p itemprop="description">My personal portfolio website showcasing my skills and projects.</p>
             <div class="project-links">
-              <a href="https://adelpro.github.io" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://adelpro.github.io" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://www.github.com/adelpro/adelpro.github.io" target="_blank" rel="noopener noreferrer"
                 itemprop="codeRepository">Source code</a>
@@ -144,8 +155,8 @@
             <p itemprop="description">A tool for verifying hadith authenticity, helping users validate Islamic
               traditions.</p>
             <div class="project-links">
-              <a href="https://adelpro.github.io/check-hadith" target="_blank" rel="noopener noreferrer"
-                itemprop="url">Live Demo</a>
+              <a href="https://adelpro.github.io/check-hadith" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live Demo</a>
               <a href="https://www.github.com/adelpro/check-hadith" target="_blank" rel="noopener noreferrer"
                 itemprop="codeRepository">Source code</a>
             </div>
@@ -161,7 +172,8 @@
             <h3 itemprop="name">Quranipfs</h3>
             <p itemprop="description">Quran application using IPFS for decentralized storage and distribution.</p>
             <div class="project-links">
-              <a href="https://www.quranipfs.com" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://www.quranipfs.com" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://www.github.com/adelpro/Quranipfs" target="_blank" rel="noopener noreferrer"
                 itemprop="codeRepository">Source code</a>
@@ -179,7 +191,8 @@
             <p itemprop="description">Prayer times application providing accurate prayer schedules for Muslims
               worldwide.</p>
             <div class="project-links">
-              <a href="https://openadhan.web.app" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://openadhan.web.app" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://www.github.com/adelpro/Openadhan" target="_blank" rel="noopener noreferrer"
                 itemprop="codeRepository">Source code</a>
@@ -198,7 +211,8 @@
               achievements.
             </p>
             <div class="project-links">
-              <a href="https://abbadi-houssam.web.app" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://abbadi-houssam.web.app" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://github.com/adelpro/abbadihoussam" target="_blank" rel="noopener noreferrer"
                 itemprop="codeRepository">Source code</a>
@@ -216,7 +230,8 @@
             <p itemprop="description">Website for Saidaliati, providing information and services related to their
               business.</p>
             <div class="project-links">
-              <a href="https://saidaliati.web.app" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://saidaliati.web.app" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
             </div>
             <div class="tags">
@@ -233,7 +248,8 @@
               utilizing the API from the Al-Dorar Al-Sunniyah platform.
             </p>
             <div class="project-links">
-              <a href="https://check-hadith.web.app/" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://check-hadith.web.app/" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://github.com/adelpro/check-hadith-native" target="_blank" rel="noopener noreferrer">Source
                 Code</a>
@@ -255,8 +271,8 @@
               Node.js).
             </p>
             <div class="project-links">
-              <a href="https://mern-auth-roles.onrender.com" target="_blank" rel="noopener noreferrer"
-                itemprop="url">Live
+              <a href="https://mern-auth-roles.onrender.com" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://github.com/adelpro/MERN-auth-roles-boilerplate" target="_blank"
                 rel="noopener noreferrer">Source
@@ -307,7 +323,8 @@
               offline access, and responsive design.
             </p>
             <div class="project-links">
-              <a href="https://open-mushaf.vercel.app" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://open-mushaf.vercel.app" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://github.com/adelpro/open-mushaf" target="_blank" rel="noopener noreferrer">Source
                 Code</a>
@@ -329,7 +346,8 @@
               your audience while the platform handles the technical complexities.
             </p>
             <div class="project-links">
-              <a href="https://nextpalestine.vercel.app" target="_blank" rel="noopener noreferrer" itemprop="url">Live
+              <a href="https://nextpalestine.vercel.app" target="_blank" rel="noopener noreferrer" itemprop="url"
+                id='live-demo'>Live
                 Demo</a>
               <a href="https://github.com/adelpro/nextpalestine" target="_blank" rel="noopener noreferrer">Source
                 Code</a>
@@ -380,21 +398,36 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
+
   <script>
-    VANTA.WAVES({
-      el: "#background__vanta",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x3498db,
-      shininess: 35.00,
-      waveHeight: 15.50,
-      waveSpeed: 0.50,
-      zoom: 0.65
+    const preloader = document.getElementById("preloader");
+    const mainContent = document.getElementById("main-content");
+    const vantaBackground = document.getElementById("background__vanta");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      preloader.classList.remove("show");
+      preloader.classList.add("hide");
+
+      mainContent.classList.remove("hide");
+      mainContent.classList.add("main-content");
+
+      vantaBackground.classList.remove("hide");
+      vantaBackground.classList.add("show");
+      VANTA.WAVES({
+        el: "#background__vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x3498db,
+        shininess: 35.00,
+        waveHeight: 15.50,
+        waveSpeed: 0.50,
+        zoom: 0.65
+      });
     });
   </script>
 </body>

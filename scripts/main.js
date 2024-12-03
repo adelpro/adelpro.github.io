@@ -1,20 +1,24 @@
-import {
-  getVisibleCards,
-  handleArrowNavigation,
-  filterProjects,
-} from "./helper.js";
+import { handleArrowNavigation, filterProjects } from "./helper.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const projectCards = document.querySelectorAll(".project-card");
+  const firstCard = projectCards[0];
 
-  // Ensure the first card is focusable and add initial focus
+  // Add click event listener to each card
   projectCards.forEach((card) => {
-    //card.classList.remove("active");
     card.addEventListener("click", function () {
       card.focus();
-      card.classList.add("active");
     });
     card.setAttribute("tabindex", "0");
+    card.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const link = card.querySelector("#live-demo"); // Select the link with ID 'live-demo'
+        if (link) {
+          window.location.href = link.href;
+        }
+      }
+    });
   });
 
   // Global escape key listener to return to first card
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Create and append the "All" button to reset filter
   const allButton = document.createElement("button");
   allButton.textContent = "All";
-  allButton.classList.add("tag-button");
+  allButton.classList.add("tag-button-active");
   allButton.addEventListener("click", () => {
     filterProjects("All", projectCards);
     document.querySelectorAll("#tag-list button").forEach((btn) => {
@@ -92,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Set "All" as the default tag and make it active
-  allButton.classList.add("ta-button-active");
+  allButton.classList.add("tab-button-active");
   filterProjects("All");
 
   // Show a navigation hint to the user only when the card list is visible
@@ -107,11 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         hintMessage.style.display = "block";
-        const firstVisibleCard = document.querySelector(
-          ".project-card[style*='display: block']"
-        );
-        if (firstVisibleCard) {
-          firstVisibleCard.focus();
+        const firstVisibleCard = document.querySelectorAll(".project-card");
+
+        if (firstVisibleCard.length > 0) {
+          console.log("First visible card: ", firstVisibleCard[0]);
+          firstVisibleCard[0].focus();
         }
       } else {
         hintMessage.style.display = "none";
