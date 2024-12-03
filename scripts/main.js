@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         hintMessage.style.display = "block";
-        const firstVisibleCard = document.querySelectorAll(".project-card");
-
-        if (firstVisibleCard.length > 0) {
-          console.log("First visible card: ", firstVisibleCard[0]);
-          firstVisibleCard[0].focus();
+        const firstVisibleCard = document.querySelector(
+          ".project-card[style*='display: block']"
+        );
+        if (firstVisibleCard) {
+          firstVisibleCard.focus();
         }
       } else {
         hintMessage.style.display = "none";
