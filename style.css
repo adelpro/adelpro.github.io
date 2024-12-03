@@ -47,12 +47,9 @@ main {
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
   overflow: hidden;
-  transition: transform 0.3s ease;
+
 }
 
-main:hover {
-  transform: translateY(-5px);
-}
 
 /* Hero Section */
 .hero {
@@ -74,7 +71,7 @@ main:hover {
 
 .hero img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
@@ -90,6 +87,7 @@ main:hover {
 /* Content Sections */
 .middle-card {
   padding: 0 40px 40px;
+
 }
 
 /* Project list styles */
@@ -98,20 +96,28 @@ main:hover {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  justify-items: center;
 }
 
 .project-card {
   background-color: #ffffff;
   border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -161,7 +167,7 @@ main:hover {
 .social-icon {
   font-size: 1.5rem;
   color: var(--text-secondary);
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .social-icon:hover {
@@ -212,31 +218,6 @@ h2::after {
   background-color: var(--accent-color);
 }
 
-/* Accessibility and Keyboard Navigation Styles */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: white;
-  padding: 8px;
-  z-index: 100;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-.project-card:focus,
-.project-card:focus-within {
-  outline: 2px solid var(--accent-color);
-  box-shadow: 0 0 0 2px var(--accent-color);
-}
-
-.project-card:focus-within {
-  outline-offset: 2px;
-}
-
 a:focus,
 button:focus {
   outline: 2px solid var(--accent-color);
@@ -249,24 +230,12 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* Add visual feedback for keyboard navigation */
-.project-card:focus-within::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid var(--accent-color);
-  border-radius: 8px;
-  pointer-events: none;
-}
-
 /* Ensure interactive elements have proper focus states */
 a:focus,
 button:focus,
 input:focus,
 textarea:focus,
+div:focus,
 select:focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
@@ -284,7 +253,7 @@ select,
 
 /* Ensure proper color contrast for links */
 a {
-  color: #0000EE;
+  color: var(--accent-color);
 }
 
 a:visited {
@@ -308,6 +277,10 @@ a:visited {
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 }
 
 .filter-section:hover {
@@ -319,7 +292,14 @@ a:visited {
   flex-wrap: wrap;
 }
 
-#tag-list button {
+
+
+#tag-list button:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.tag-button {
   background-color: #f4f4f4;
   color: #007BFF;
   border: 1px solid #007BFF;
@@ -331,20 +311,46 @@ a:visited {
   transition: background-color 0.3s ease;
 }
 
-#tag-list button:hover {
-  background-color: #007BFF;
+.tag-button-active {
+  background-color: var(--accent-color);
   color: #fff;
 }
 
-#tag-list button.active {
-  background-color: #007BFF;
+
+
+.tags span {
+  margin: 2px 5px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background-color: #eee;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.tags span:hover {
+  background-color: var(--accent-color);
   color: #fff;
+  cursor: pointer;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
   margin-bottom: 50px;
+}
+
+/* Navigation Hint */
+.navigation-hint {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
 }
 
 /* Responsive Adjustments */
