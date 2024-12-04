@@ -19,19 +19,6 @@
   --messenger-color: #0077b5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #333;
-    --text-primary: #f8f8f8;
-    --text-secondary: #ccc;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --accent-color: #3498db;
-    --accent-color-hover: #2980b9;
-
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -81,6 +68,8 @@ body {
   border: 3px solid white;
   transition: all 0.4s ease;
   margin-bottom: 20px;
+
+
 }
 
 .hero img:hover {
@@ -110,10 +99,7 @@ body {
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-    margin: 5px;
-  }
+
 }
 
 .filter-section:hover {
@@ -145,9 +131,7 @@ body {
   max-width: 700px;
   margin: 5 auto;
 
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
+
 }
 
 .project-card:hover {
@@ -237,10 +221,7 @@ h1 {
   color: var(--text-primary);
   text-align: center;
 
-  @media screen and (max-width: 768px) {
-    width: 100%;
 
-  }
 }
 
 h2 {
@@ -250,11 +231,7 @@ h2 {
   text-align: center;
   color: var(--text-primary);
 
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    text-align: center;
 
-  }
 }
 
 h2::after {
@@ -311,8 +288,6 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
-
-
 
 .tag-button {
   background-color: var(--background-color);
@@ -402,35 +377,52 @@ a {
   display: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  main {
-    border-radius: 0;
-  }
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333;
+    --text-primary: #f8f8f8;
+    --text-secondary: #ccc;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-color: #3498db;
+    --accent-color-hover: #2980b9;
 
+  }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+
+  /* Consolidated styles from various scattered media queries */
   .hero {
     padding: 40px 20px;
   }
 
   .hero img {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    /* Fixed inconsistent image sizing */
+    height: 300px;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
+  .filter-section {
+    padding: 10px;
+    margin: 5px;
   }
 
-  .hero p {
-    font-size: 1.1rem;
+  .project-card {
+    padding: 15px;
   }
 
-  .middle-card {
-    padding: 10px 5px;
+  h1,
+  h2 {
+    width: 100%;
+    text-align: center;
   }
 
   .project-list {
     grid-template-columns: 1fr;
+    /* Changes grid to single column */
     padding: 5px;
   }
 
@@ -439,23 +431,21 @@ a {
   }
 }
 
-
-@media (max-width: 480px) {
-  #background__vanta {
-    padding: 20px 10px;
-  }
-
+@media screen and (max-width: 480px) {
   .hero {
     padding: 30px 15px;
+    /* Reduced padding */
   }
 
   .hero img {
     width: 150px;
+    /* Smaller image for very small screens */
     height: 150px;
   }
 
   .hero h1 {
     font-size: 2rem;
+    /* Reduced font size */
   }
 
   .hero p {
