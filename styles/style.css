@@ -33,6 +33,32 @@ body {
   min-height: 100vh;
 }
 
+/* Ensure proper color contrast for links */
+a {
+  color: var(--accent-color);
+}
+
+/* Add a subtle transition for focus states */
+a,
+button,
+input,
+textarea,
+select,
+.project-card {
+  transition: outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Ensure interactive elements have proper focus states */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+div:focus,
+select:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 .body-container {
   min-height: 100vh;
   display: flex;
@@ -258,32 +284,6 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* Ensure interactive elements have proper focus states */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-div:focus,
-select:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-/* Add a subtle transition for focus states */
-a,
-button,
-input,
-textarea,
-select,
-.project-card {
-  transition: outline 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-/* Ensure proper color contrast for links */
-a {
-  color: var(--accent-color);
-}
-
 .tag-button-filter {
   display: flex;
   flex-wrap: wrap;
@@ -394,7 +394,6 @@ a {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
 
-  /* Consolidated styles from various scattered media queries */
   .hero {
     padding: 40px 20px;
   }
