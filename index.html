@@ -402,8 +402,8 @@
     </main>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js" defer></script>
 
   <script>
     const preloader = document.getElementById("preloader");
@@ -426,18 +426,18 @@
 
         VANTA.WAVES({
           el: "#hero__vanta",
-          mouseControls: true,
-          touchControls: true,
+          mouseControls: false,
+          touchControls: false,
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: isDarkMode ? 0x163E5A : 0x3498db,  // Dark color for dark mode, light color for light mode
-          shininess: 35.00,
-          waveHeight: 15.50,
-          waveSpeed: 0.50,
-          zoom: 0.65
+          color: isDarkMode ? 0x163E5A : 0x3498db,
+          shininess: 25.00,
+          waveHeight: 10.50,
+          waveSpeed: 0.30,
+          zoom: 0.55
         });
       }
 
