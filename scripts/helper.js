@@ -10,14 +10,16 @@ export function handleArrowNavigation(event, card, projectCards) {
   if (!card) return;
 
   switch (event.key) {
-    case "Enter":
+    case "Enter": {
       event.preventDefault();
       const liveDemo = card.querySelector("#live-demo");
       if (liveDemo) {
         window.open(liveDemo.href, "_blank");
       }
       break;
-    case "ArrowRight":
+    }
+
+    case "ArrowRight": {
       event.preventDefault();
       const visibleCards = getVisibleCards(projectCards);
       const currentVisibleIndex = visibleCards.indexOf(card);
@@ -25,8 +27,9 @@ export function handleArrowNavigation(event, card, projectCards) {
         visibleCards[currentVisibleIndex + 1].focus();
       }
       break;
+    }
 
-    case "ArrowLeft":
+    case "ArrowLeft": {
       event.preventDefault();
       const visibleCardsLeft = getVisibleCards(projectCards);
       const currentVisibleLeftIndex = visibleCardsLeft.indexOf(card);
@@ -34,8 +37,9 @@ export function handleArrowNavigation(event, card, projectCards) {
         visibleCardsLeft[currentVisibleLeftIndex - 1].focus();
       }
       break;
+    }
 
-    case "ArrowDown":
+    case "ArrowDown": {
       event.preventDefault();
       const cardsPerRowDown = Math.floor(
         window.innerWidth / projectCards[0].offsetWidth
@@ -47,8 +51,9 @@ export function handleArrowNavigation(event, card, projectCards) {
         visibleCardsDown[nextCardIndexDown].focus();
       }
       break;
+    }
 
-    case "ArrowUp":
+    case "ArrowUp": {
       event.preventDefault();
       const cardsPerRowUp = Math.floor(
         window.innerWidth / projectCards[0].offsetWidth
@@ -60,6 +65,7 @@ export function handleArrowNavigation(event, card, projectCards) {
         visibleCardsUp[prevCardIndexUp].focus();
       }
       break;
+    }
   }
 }
 

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  projectCards.forEach((card, _index) => {
+  projectCards.forEach((card) => {
     card.addEventListener("keydown", function (event) {
       handleArrowNavigation(event, card, projectCards);
     });

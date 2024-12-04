@@ -401,7 +401,6 @@ a {
 
   .hero img {
     width: 300px;
-    /* Fixed inconsistent image sizing */
     height: 300px;
   }
 
@@ -422,7 +421,6 @@ a {
 
   .project-list {
     grid-template-columns: 1fr;
-    /* Changes grid to single column */
     padding: 5px;
   }
 
@@ -434,18 +432,15 @@ a {
 @media screen and (max-width: 480px) {
   .hero {
     padding: 30px 15px;
-    /* Reduced padding */
   }
 
   .hero img {
     width: 150px;
-    /* Smaller image for very small screens */
     height: 150px;
   }
 
   .hero h1 {
     font-size: 2rem;
-    /* Reduced font size */
   }
 
   .hero p {
