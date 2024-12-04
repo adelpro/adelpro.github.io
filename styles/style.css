@@ -214,32 +214,35 @@ select:focus {
 }
 
 .social-icon {
-  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
   color: var(--text-secondary);
-  transition: all 0.3s ease;
 }
 
 .social-icon:hover {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
-.facebook:hover {
+
+.social-icon.facebook:hover {
   color: var(--facebook-color);
 }
 
-.twitter:hover {
+.social-icon.twitter:hover {
   color: var(--twitter-color);
 }
 
-.github:hover {
+.social-icon.github:hover {
   color: var(--github-color);
 }
 
-.email:hover {
+.social-icon.email:hover {
   color: var(--email-color);
 }
 
-.messenger:hover {
+.social-icon.messenger:hover {
   color: var(--messenger-color);
 }
 

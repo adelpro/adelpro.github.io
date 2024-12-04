@@ -1,6 +1,18 @@
 import { handleArrowNavigation, filterProjects } from "./helper.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  // obscure the email link
+  const emailLink = document.getElementById("email-link");
+  emailLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (emailLink) {
+      const user = "adelpro";
+      const domain = "gmail.com";
+      emailLink.href = `mailto:${user}@${domain}`;
+
+      window.location.href = emailLink.href;
+    }
+  });
   const projectCards = document.querySelectorAll(".project-card");
   const firstCard = projectCards[0];
 
