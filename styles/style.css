@@ -46,23 +46,12 @@ body {
   min-height: 100vh;
 }
 
-#background__vanta {
+.body-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-}
-
-.main-content {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color);
-  color: var(--text-primary);
-
+  padding: 10px;
 }
 
 /* Hero Section */
@@ -71,6 +60,16 @@ body {
   padding: 60px 40px;
   width: 100%;
   text-align: center;
+  position: relative;
+}
+
+.version {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 5px;
+  padding: 2px;
+  font-size: 0.8rem;
   color: #fff;
 }
 
@@ -92,18 +91,20 @@ body {
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
 
 .hero p {
   font-size: 1.2rem;
   opacity: 0.9;
+  color: var(--text-primary);
 }
 
 
 /* Filter Section Styles */
 .filter-section {
-  padding: 20px;
-  margin: 10px;
+  padding: 10px;
+  margin: 5px;
   background-color: var(--background-color);
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
@@ -142,7 +143,6 @@ body {
   box-shadow: 0 4px 6px var(--shadow-color);
   position: relative;
   max-width: 700px;
-  width: 90%;
   margin: 5 auto;
 
   @media (max-width: 768px) {
@@ -234,12 +234,21 @@ h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--text-primary);
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+
+  }
 }
 
 h2 {
   font-size: 1.8rem;
   margin: 30px 0 20px;
   position: relative;
+  text-align: center;
+  color: var(--text-primary);
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -298,10 +307,6 @@ a {
   color: var(--accent-color);
 }
 
-a:visited {
-  color: #551A8B;
-}
-
 .tag-button-filter {
   display: flex;
   flex-wrap: wrap;
@@ -316,25 +321,33 @@ a:visited {
   border-radius: 5px;
   padding: 8px 12px;
   margin: 5px;
-  font-size: 14px;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tag-button:hover {
   background-color: var(--accent-color-hover);
   color: var(--background-color);
+  transform: scale(1.1);
 }
 
 .tag-button-active {
-  border: 1px solid var(--text-secondary);
+  background-color: var(--accent-color);
+  border: 1px solid var(--background-color);
+  color: var(--background-color);
   border-radius: 5px;
   padding: 8px 12px;
   margin: 5px;
-  font-size: 14px;
+  font-size: 1.1rem;
   cursor: pointer;
-  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.tag-button-active:hover {
+  background-color: var(--accent-color-hover);
   color: var(--background-color);
+  transform: scale(1.1);
 }
 
 .tags {
@@ -348,16 +361,25 @@ a:visited {
 .tags span {
   margin: 2px 5px;
   padding: 2px 5px;
+  font-size: 0.8rem;
   border-radius: 4px;
-  background-color: #eee;
-  color: var(--text-secondary);
+  background-color: #6d6d6d;
+  color: #fff;
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tags span .active {
+  background-color: var(--accent-color);
+  color: #fff;
+  transition: all 0.3s ease;
+
 }
 
 .tags span:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-  cursor: pointer;
+  background-color: var(--accent-color-hover);
+  color: var(--text-primary);
+  transform: scale(1.1);
 }
 
 /* Hero Section */

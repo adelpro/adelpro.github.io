@@ -112,16 +112,17 @@
   <div id="preloader" class="fullscreen show">
     <div class="loader"></div>
   </div>
-  <div id="background__vanta" class="hide">
+  <div id="background__vanta" class="body-container hide">
 
     <main id="main-content" class="main-content hide">
 
-      <section class="hero" itemscope itemtype="http://schema.org/Person">
+      <section id="hero__vanta" class="hero" itemscope itemtype="http://schema.org/Person">
         <img src="./images/profile.webp" alt="Profile picture of BENYAHIA Adel" itemprop="image" loading="lazy" />
         <h1 itemprop="name">BENYAHIA Adel</h1>
         <p itemprop="jobTitle">Web Applications Developer</p>
         <p itemprop="knowsAbout">(HTML │ CSS │ JS | React | React Native)</p>
       </section>
+      <span class="version">v2.2.0</span>
       <section class="filter-section">
         <h2>Filter Projects by Tags</h2>
         <div id="tag-list" class="tag-button-filter">
@@ -418,21 +419,30 @@
 
       vantaBackground.classList.remove("hide");
       vantaBackground.classList.add("show");
-      VANTA.WAVES({
-        el: "#background__vanta",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x3498db,
-        shininess: 35.00,
-        waveHeight: 15.50,
-        waveSpeed: 0.50,
-        zoom: 0.65
-      });
+
+      // Function to initialize Vanta effect
+      function initializeVantaWaves() {
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        VANTA.WAVES({
+          el: "#hero__vanta",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: isDarkMode ? 0x163E5A : 0x3498db,  // Dark color for dark mode, light color for light mode
+          shininess: 35.00,
+          waveHeight: 15.50,
+          waveSpeed: 0.50,
+          zoom: 0.65
+        });
+      }
+
+      // Initialize Vanta Waves
+      initializeVantaWaves();
     });
   </script>
 </body>

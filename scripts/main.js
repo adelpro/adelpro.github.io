@@ -4,15 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectCards = document.querySelectorAll(".project-card");
   const firstCard = projectCards[0];
 
-  // Add click event listener to each card
   projectCards.forEach((card) => {
     card.addEventListener("click", function () {
       card.focus();
     });
     card.setAttribute("tabindex", "0");
-  });
 
-  // Global escape key listener to return to first card
+    const tags = card.querySelectorAll(".tags span");
+    tags.forEach((tag) => {
+      tag.addEventListener("click", function (event) {
+        const tagText = event.target.textContent;
+        const relatedButton = Array.from(
+          document.querySelectorAll("#tag-list button")
+        ).find((button) => button.textContent === tagText);
+
+        if (relatedButton) {
+          relatedButton.click();
+        }
+      });
+    });
+  });
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       event.preventDefault();
@@ -102,9 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         hintMessage.style.display = "block";
-        const firstVisibleCard = document.querySelector(
-          ".project-card[style*='display: block']"
-        );
+        const firstVisibleCard = document.querySelector(".project-card");
         if (firstVisibleCard) {
           firstVisibleCard.focus();
         }
