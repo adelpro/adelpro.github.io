@@ -139,11 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Ensure all project cards are observed
-  projectCards.forEach((card) => {
-    if (card) {
-      observer.observe(card);
-    }
-  });
+  const isMobile = window.innerWidth <= 768;
+  !isMobile &&
+    projectCards.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
 
   // Remove hint after 5 seconds
   setTimeout(() => {
