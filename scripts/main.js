@@ -110,17 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Setup IntersectionObserver to show the hint when cards are in view
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        hintMessage.style.display = "block";
-        const firstVisibleCard = document.querySelector(".project-card");
-        if (firstVisibleCard) {
-          firstVisibleCard.focus();
+    entries.forEach(
+      (entry) => {
+        if (entry.isIntersecting) {
+          hintMessage.style.display = "block";
+          const firstVisibleCard = document.querySelector(".project-card");
+          if (firstVisibleCard) {
+            firstVisibleCard.focus();
+          }
+        } else {
+          hintMessage.style.display = "none";
         }
-      } else {
-        hintMessage.style.display = "none";
-      }
-    });
+      },
+      { threshold: 1.0 }
+    );
   });
 
   // Ensure all project cards are observed
