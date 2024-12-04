@@ -113,9 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         hintMessage.style.display = "block";
-        const firstVisibleCard = document.querySelector(
-          ".project-card[style*='display: block']"
-        );
+        const firstVisibleCard = document.querySelector(".project-card");
         if (firstVisibleCard) {
           firstVisibleCard.focus();
         }
