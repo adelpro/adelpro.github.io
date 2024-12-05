@@ -206,7 +206,190 @@ select:focus {
   color: var(--text-primary);
 }
 
-/* Rest of the existing styles remain the same */
+/* Contact section */
+.contact-me {
+  background-color: var(--background-color);
+  padding: 40px;
+  text-align: center;
+}
+
+.social-icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+
+.social-icon.facebook:hover {
+  color: var(--facebook-color);
+}
+
+.social-icon.twitter:hover {
+  color: var(--twitter-color);
+}
+
+.social-icon.github:hover {
+  color: var(--github-color);
+}
+
+.social-icon.email:hover {
+  color: var(--email-color);
+}
+
+.social-icon.messenger:hover {
+  color: var(--messenger-color);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  text-align: center;
+
+
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 30px 0 20px;
+  position: relative;
+  text-align: center;
+  color: var(--text-primary);
+
+
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 200px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Add focus styles for social icons */
+.social-icon:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.tag-button-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-button {
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-button:hover {
+  background-color: var(--accent-color-hover);
+  color: var(--background-color);
+  transform: scale(1.1);
+}
+
+.tag-button-active {
+  background-color: var(--accent-color);
+  border: 1px solid var(--background-color);
+  color: var(--background-color);
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-button-active:hover {
+  background-color: var(--accent-color-hover);
+  color: var(--background-color);
+  transform: scale(1.1);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+.tags span {
+  margin: 2px 5px;
+  padding: 2px 5px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  background-color: #6d6d6d;
+  color: var(--of-white-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tags span .active {
+  background-color: var(--accent-color);
+  color: var(--of-white-color);
+  transition: all 0.3s ease;
+
+}
+
+.tags span:hover {
+  background-color: var(--accent-color-hover);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Navigation Hint */
+.navigation-hint {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #333;
+  color: var(--of-white-color);
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+}
 
 /* Responsive Media Queries */
 @media screen and (max-width: 768px) {
