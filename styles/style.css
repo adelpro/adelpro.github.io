@@ -1,6 +1,7 @@
-/* Google Font Preload */
+/* Google Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;300;400;600&display=swap");
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +34,7 @@ a {
   transition: color 0.3s ease;
 }
 
-/* Transition and focus states */
+/* Add a subtle transition for focus states */
 a,
 button,
 input,
@@ -84,6 +85,7 @@ select:focus {
   border: 3px solid var(--of-white-color);
   transition: all 0.4s ease;
   margin-bottom: 20px;
+
 }
 
 .hero img:hover {
@@ -95,23 +97,26 @@ select:focus {
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: var(--of-white-color);
+
 }
 
 .hero p {
   font-size: 1.2rem;
   opacity: 0.9;
   color: var(--of-white-color);
+
 }
 
-.hero version {
+.version {
   position: absolute;
   top: 10px;
   right: 10px;
-  margin: 10px;
+  margin: 5px;
   padding: 2px;
   font-size: 0.8rem;
   color: var(--of-white-color);
 }
+
 
 /* Filter Section Styles */
 .filter-section {
@@ -121,7 +126,8 @@ select:focus {
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease;
-
+  min-height: 200px;
+  width: 100%;
 
 }
 
@@ -129,26 +135,17 @@ select:focus {
   transform: translateY(-5px);
 }
 
-/* Middle Card Section */
+/* Content Sections */
 .middle-card {
   background-color: var(--background-color);
   width: 100%;
   min-height: 500px;
-  /* Prevent layout shift */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  width: 100%;
-  max-width: 1200px;
   margin-top: 40px;
   padding: 5px;
   justify-items: center;
@@ -157,14 +154,12 @@ select:focus {
 .project-card {
   background-color: var(--background-color);
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px var(--shadow-color);
-  width: 100%;
-  max-width: 400px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  max-width: 800px;
+  margin: 5 auto;
 
 }
 
@@ -178,20 +173,17 @@ select:focus {
   margin-bottom: 10px;
   font-size: 1.4rem;
   color: var(--accent-color);
-  flex-shrink: 0;
 }
 
 .project-card p {
   margin-bottom: 15px;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  flex-grow: 1;
 }
 
 .project-links {
   display: flex;
   gap: 15px;
-  margin-top: auto;
 }
 
 .project-links a {
@@ -286,12 +278,6 @@ h2::after {
   background-color: var(--accent-color);
 }
 
-a:focus,
-button:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
 /* Add focus styles for social icons */
 .social-icon:focus {
   outline: 2px solid var(--accent-color);
@@ -371,12 +357,6 @@ button:focus {
   transform: scale(1.1);
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
 /* Navigation Hint */
 .navigation-hint {
   position: fixed;
@@ -391,53 +371,66 @@ button:focus {
   display: none;
 }
 
-/* Responsive Media Queries */
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333;
+    --text-primary: #f8f8f8;
+    --text-secondary: #ccc;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-color: #256a98;
+    --accent-color-hover: #184f74;
+
+  }
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
+
   .hero {
     padding: 40px 20px;
-    margin-bottom: 30px;
   }
 
   .hero img {
-    width: 250px;
-    height: 250px;
-    aspect-ratio: 1 / 1;
-    /* Ensures consistent square shape */
-    object-fit: cover;
+    width: 300px;
+    height: 300px;
   }
 
-  .middle-card {
-    min-height: 400px;
-    /* Adjusted for smaller screens */
+  .filter-section {
     padding: 10px;
-  }
-
-  .project-list {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    margin: 5px;
   }
 
   .project-card {
     padding: 15px;
-    max-width: 350px;
   }
 
   h1,
   h2 {
-    font-size: 2.2rem;
+    width: 100%;
+    text-align: center;
   }
+
+  .project-list {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+
+  .tag-button-filter {
+    justify-content: center;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
   .hero {
     padding: 30px 15px;
-    margin-bottom: 20px;
   }
 
   .hero img {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
   }
 
   .hero h1 {
@@ -449,24 +442,18 @@ button:focus {
   }
 
   .middle-card {
-    min-height: 350px;
-    /* Further reduced for mobile */
-    padding: 10px;
+    padding: 20px 15px;
   }
 
-  .project-list {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .project-card {
-    max-width: 100%;
-    padding: 15px;
+  .contact-me {
+    padding: 30px 20px;
   }
 
   .social-icon {
-    width: 25px;
-    height: 25px;
+    font-size: 1.3rem;
+  }
+
+  .tag-button-filter {
+    justify-content: center;
   }
 }
