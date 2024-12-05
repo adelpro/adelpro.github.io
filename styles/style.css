@@ -77,11 +77,8 @@ select:focus {
 }
 
 .hero img {
-  display: block;
-  /* Prevents inline-block gap issues */
-  width: 200px;
-  /* Set your desired dimensions */
   max-width: 200px;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
@@ -128,7 +125,7 @@ select:focus {
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease;
-  min-height: 150px;
+  min-height: 200px;
   width: 100%;
 
 }
@@ -396,6 +393,7 @@ h2::after {
   }
 
   .hero img {
+    width: 100%;
     max-width: 300px;
   }
 
@@ -433,6 +431,7 @@ h2::after {
   }
 
   .hero img {
+    width: 100%;
     max-width: 150px;
   }
 
