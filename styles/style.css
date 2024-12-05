@@ -160,6 +160,7 @@ select:focus {
   position: relative;
   max-width: 800px;
   margin: 5 auto;
+  min-height: 200px;
 
 }
 
@@ -400,6 +401,7 @@ h2::after {
   .filter-section {
     padding: 10px;
     margin: 5px;
+    min-height: 200px;
   }
 
   .project-card {
@@ -413,8 +415,9 @@ h2::after {
   }
 
   .project-list {
-    grid-template-columns: 1fr;
-    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
   }
 
   .tag-button-filter {
@@ -455,5 +458,11 @@ h2::after {
 
   .tag-button-filter {
     justify-content: center;
+  }
+
+  .tag-button {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 0.9rem;
   }
 }
