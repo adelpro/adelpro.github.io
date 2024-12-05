@@ -1,10 +1,5 @@
 /* Loader */
 
-:root {
-    --background-color: #fdfcfc;
-    --accent-color: #3498db;
-}
-
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 120px;
@@ -51,12 +46,4 @@
 
 .hide {
     display: none;
-}
-
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #333;
-        --accent-color: #256a98;
-    }
 }

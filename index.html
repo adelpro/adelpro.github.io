@@ -7,12 +7,14 @@
   <title>BENYAHIA Adel - Web Applications Developer</title>
 
   <!-- Preload stylesheet -->
+  <link rel="preload" href="/styles/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="/styles/waves.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="/styles/preloader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Fallback for users with JavaScript disabled -->
   <noscript>
+    <link rel="stylesheet" href="/styles/variables.css">
     <link rel="stylesheet" href="/styles/waves.css">
     <link rel="stylesheet" href="/styles/preloader.css">
     <link rel="stylesheet" href="/styles/style.css">
@@ -135,7 +137,7 @@
         <p itemprop="jobTitle">Web Applications Developer</p>
         <p itemprop="knowsAbout">(HTML │ CSS │ JS | React | React Native)</p>
       </section>
-      <span class="version">v2.4.0</span>
+      <span class="version">v2.4.1</span>
       <section class="filter-section">
         <h2>Filter Projects by Tags</h2>
         <div id="tag-list" class="tag-button-filter">

@@ -1,0 +1,44 @@
+:root {
+    /* Modern color palette */
+    --background-color: #fdfcfc;
+    --text-primary: #333;
+    --text-secondary: #6d6d6d;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --accent-color: #3498db;
+    --accent-color-hover: #2980b9;
+    --of-white-color: #F8F8F8;
+
+    /* Social Media Colors */
+    --facebook-color: #3b5999;
+    --twitter-color: #55acee;
+    --github-color: #333;
+    --email-color: #0077b5;
+    --messenger-color: #0077b5;
+
+    /* waves colors */
+    --wave-color-1: rgba(255, 255, 255, 0.7);
+    --wave-color-2: rgba(255, 255, 255, 0.5);
+    --wave-color-3: rgba(255, 255, 255, 0.3);
+    --wave-color-4: rgba(255, 255, 255, 1);
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #333;
+        --text-primary: #f8f8f8;
+        --text-secondary: #ccc;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --shadow-color: rgba(0, 0, 0, 0.3);
+        --accent-color: #256a98;
+        --accent-color-hover: #184f74;
+
+        /* waves colors */
+        --wave-color-1: rgba(37, 106, 152, 0.7);
+        --wave-color-2: rgba(37, 51, 51, 0.5);
+        --wave-color-3: rgba(37, 51, 51, 0.3);
+        --wave-color-4: rgba(51, 51, 51, 0.1);
+
+    }
+}
