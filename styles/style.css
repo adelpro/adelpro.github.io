@@ -75,16 +75,6 @@ select:focus {
   margin-bottom: 50px;
 }
 
-.version {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  margin: 10px;
-  padding: 2px;
-  font-size: 0.8rem;
-  color: var(--of-white-color);
-}
-
 .hero img {
   width: 200px;
   height: 200px;
@@ -111,6 +101,32 @@ select:focus {
   font-size: 1.2rem;
   opacity: 0.9;
   color: var(--of-white-color);
+}
+
+.hero version {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 10px;
+  padding: 2px;
+  font-size: 0.8rem;
+  color: var(--of-white-color);
+}
+
+/* Filter Section Styles */
+.filter-section {
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: transform 0.3s ease;
+
+
+}
+
+.filter-section:hover {
+  transform: translateY(-5px);
 }
 
 /* Middle Card Section */
