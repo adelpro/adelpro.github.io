@@ -77,6 +77,10 @@ select:focus {
 }
 
 .hero img {
+  display: block;
+  /* Prevents inline-block gap issues */
+  width: 200px;
+  /* Set your desired dimensions */
   max-width: 200px;
   height: auto;
   object-fit: cover;
@@ -124,7 +128,7 @@ select:focus {
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color);
   transition: transform 0.3s ease;
-  min-height: 200px;
+  min-height: 150px;
   width: 100%;
 
 }
