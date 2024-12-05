@@ -1,0 +1,74 @@
+:root {
+    --wave-color-1: rgba(255, 255, 255, 0.7);
+    --wave-color-2: rgba(255, 255, 255, 0.5);
+    --wave-color-3: rgba(255, 255, 255, 0.3);
+    --wave-color-4: rgba(255, 255, 255, 1);
+}
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: -7px;
+    /*Fix for safari gap*/
+    min-height: 100px;
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+
+}
+
+.parallax>use:nth-child(1) {
+    fill: var(--wave-color-1);
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    fill: var(--wave-color-2);
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    fill: var(--wave-color-3);
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    fill: var(--wave-color-4);
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --wave-color-1: rgba(37, 106, 152, 0.7);
+        --wave-color-2: rgba(37, 51, 51, 0.5);
+        --wave-color-3: rgba(37, 51, 51, 0.3);
+        --wave-color-4: rgba(51, 51, 51, 0.1);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}

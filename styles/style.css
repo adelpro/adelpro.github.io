@@ -71,7 +71,7 @@ select:focus {
 /* Hero Section */
 .hero {
   background-color: var(--accent-color);
-  padding: 60px 40px;
+  padding: 100px 40px;
   width: 100%;
   text-align: center;
   position: relative;
@@ -392,8 +392,8 @@ button:focus {
     --text-secondary: #ccc;
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --accent-color: #3498db;
-    --accent-color-hover: #2980b9;
+    --accent-color: #256a98;
+    --accent-color-hover: #184f74;
 
   }
 }

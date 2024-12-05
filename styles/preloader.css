@@ -1,11 +1,17 @@
 /* Loader */
 
+:root {
+    --background-color: #fdfcfc;
+    --accent-color: #3498db;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 120px;
     height: 22px;
     border-radius: 20px;
     color: var(--accent-color);
+    background-color: var(--background-color);
     border: 2px solid;
     position: relative;
 }
@@ -31,7 +37,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: '#fff';
+    background-color: var(--background-color);
     z-index: 9999;
     position: fixed;
     width: 100%;
@@ -45,4 +51,12 @@
 
 .hide {
     display: none;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #333;
+        --accent-color: #256a98;
+    }
 }
