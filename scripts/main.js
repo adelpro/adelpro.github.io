@@ -1,4 +1,8 @@
-import { handleArrowNavigation, filterProjects } from "./helper.js";
+import {
+  handleArrowNavigation,
+  filterProjects,
+  obscureEmail,
+} from "./helper.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   // obscure the email link
@@ -6,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   emailLink.addEventListener("click", function (event) {
     event.preventDefault();
     if (emailLink) {
-      const user = "adelpro";
-      const domain = "gmail.com";
-      emailLink.href = `mailto:${user}@${domain}`;
-
-      window.location.href = emailLink.href;
+      obscureEmail();
     }
   });
   const projectCards = document.querySelectorAll(".project-card");
