@@ -86,3 +86,11 @@ export function filterProjects(tag, projectCards) {
     }
   });
 }
+
+export function obscureEmail() {
+  const user = "adelpro";
+  const domain = "gmail.com";
+  emailLink.href = `mailto:${user}@${domain}`;
+
+  window.location.href = emailLink.href;
+}
