@@ -5,12 +5,74 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BENYAHIA Adel - Web Applications Developer</title>
+  <!--Inline critical CSS-->
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Preload stylesheet -->
-  <link rel="preload" href="/styles/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/styles/waves.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/styles/preloader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    body {
+      font-family: Sora, Arial, sans-serif;
+      font-display: swap;
+      background-color: var(--background-color);
+      line-height: 1.6;
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--accent-color);
+      padding: 100px 40px;
+      width: 100%;
+      text-align:
+        center;
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .hero img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--of-white-color);
+      transition: all 0.4s ease;
+      margin-bottom: 20px;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 10px var(--shadow-color);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--of-white-color);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity:
+        0.9;
+      color: var(--of-white-color);
+    }
+  </style>
+  <!-- Preload stylesheet 
+    -->
+  <link rel="preload" href="/styles/variables.css" as="style" media="all"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/styles/waves.css" as="style" media="all" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/styles/preloader.css" as="style" media="all"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/styles/style.css" as="style" media="all" onload="this.onload=null;this.rel='stylesheet'">
+
 
   <!-- Fallback for users with JavaScript disabled -->
   <noscript>
@@ -565,7 +627,8 @@
     const mainContent = document.getElementById("main-content");
     const bodyContainer = document.getElementById("body-container");
 
-    window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("load", () => {
+
       preloader.classList.remove("show");
       preloader.classList.add("hide");
 
@@ -574,8 +637,6 @@
 
       mainContent.classList.remove("hide");
       mainContent.classList.add("main-content");
-
-
 
     });
   </script>
