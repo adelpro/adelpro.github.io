@@ -9,22 +9,13 @@
 }
 
 body {
-  font-family: Sora, Arial, sans-serif;
+  font-family: 'Sora', Arial, sans-serif;
   font-display: swap;
   background-color: var(--background-color);
   line-height: 1.6;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* Placeholder font style for Sora */
-@font-face {
-  font-family: 'Sora';
-  src: url('https://fonts.gstatic.com/s/sora/v12/xMQbuFFYT.woff2') format('woff2');
-  font-display: swap;
-  font-weight: 100 600;
-  font-style: normal;
 }
 
 /* Ensure proper color contrast for links */
