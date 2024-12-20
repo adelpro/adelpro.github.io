@@ -263,7 +263,9 @@ select:focus {
   cursor: pointer;
 }
 
-
+.social-icon.hashnode:hover {
+  color: var(--hashnode-color);
+}
 .social-icon.facebook:hover {
   color: var(--facebook-color);
 }
