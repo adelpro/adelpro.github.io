@@ -99,10 +99,9 @@ select:focus {
 
 .version {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  margin: 5px;
-  padding: 2px;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
   font-size: 0.8rem;
   color: var(--of-white-color);
 }
@@ -266,6 +265,7 @@ select:focus {
 .social-icon.hashnode:hover {
   color: var(--hashnode-color);
 }
+
 .social-icon.facebook:hover {
   color: var(--facebook-color);
 }
