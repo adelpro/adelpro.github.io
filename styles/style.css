@@ -106,7 +106,6 @@ select:focus {
   color: var(--of-white-color);
 }
 
-
 /* Filter Section Styles */
 .filter-section {
   padding: 10px;
@@ -430,7 +429,7 @@ h2::after {
 @media screen and (max-width: 768px) {
 
   .hero {
-    padding: 40px 20px;
+    padding: 40px 10px;
   }
 
   .hero img {
@@ -468,7 +467,7 @@ h2::after {
 
 @media screen and (max-width: 480px) {
   .hero {
-    padding: 30px 15px;
+    padding: 30px 5px;
   }
 
   .hero img {
