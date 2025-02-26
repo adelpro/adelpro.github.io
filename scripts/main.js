@@ -1,60 +1,55 @@
-import {
-  handleArrowNavigation,
-  filterProjects,
-  obscureEmail,
-} from "./helper.js";
+import { handleArrowNavigation, filterProjects, obscureEmail } from "./helper.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  // obscure the email link
+  // Obscure email link
   const emailLink = document.getElementById("email-link");
-  emailLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    if (emailLink) {
+  if (emailLink) {
+    emailLink.addEventListener("click", function (event) {
+      event.preventDefault();
       obscureEmail(emailLink);
-    }
-  });
+    });
+  }
+
   const projectCards = document.querySelectorAll(".project-card");
   const firstCard = projectCards[0];
 
   projectCards.forEach((card) => {
+    card.setAttribute("tabindex", "0");
     card.addEventListener("click", function () {
       card.focus();
     });
-    card.setAttribute("tabindex", "0");
 
+    // Clicking a tag triggers its corresponding filter button
     const tags = card.querySelectorAll(".tags span");
     tags.forEach((tag) => {
       tag.addEventListener("click", function (event) {
+        event.stopPropagation();
         const tagText = event.target.textContent;
         const relatedButton = Array.from(
           document.querySelectorAll("#tag-list button")
         ).find((button) => button.textContent === tagText);
-
         if (relatedButton) {
           relatedButton.click();
         }
       });
     });
-  });
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      if (firstCard) {
-        firstCard.focus();
-      }
-    }
-  });
 
-  projectCards.forEach((card) => {
+    // Handle arrow navigation for this card
     card.addEventListener("keydown", function (event) {
       handleArrowNavigation(event, card, projectCards);
     });
   });
 
-  // Tags section:
-  const tagList = document.getElementById("tag-list");
+  // Escape key brings focus back to the first card
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && firstCard) {
+      event.preventDefault();
+      firstCard.focus();
+    }
+  });
 
-  // Extract all unique tags
+  // Build tags section
+  const tagList = document.getElementById("tag-list");
   const allTags = new Set();
   projectCards.forEach((card) => {
     const tags = card.querySelector(".tags").textContent.split("\n");
@@ -63,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Create and append the "All" button to reset filter
+  // "All" filter button to reset the filter
   const allButton = document.createElement("button");
   allButton.textContent = "All";
   allButton.classList.add("tag-button-active");
@@ -74,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.classList.add("tag-button");
     });
     allButton.classList.add("tag-button-active");
-
-    // Focus the first visible card after resetting the filter
     const firstVisibleCard = document.querySelector(
       ".project-card[style*='display: block']"
     );
@@ -85,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   tagList.appendChild(allButton);
 
-  // Generate tag buttons
+  // Generate individual tag buttons
   allTags.forEach((tag) => {
     const button = document.createElement("button");
     button.textContent = tag;
@@ -97,8 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.classList.add("tag-button");
       });
       button.classList.add("tag-button-active");
-
-      // Focus the first visible project card after filtering
       const firstVisibleCard = document.querySelector(
         ".project-card[style*='display: block']"
       );
@@ -109,60 +100,50 @@ document.addEventListener("DOMContentLoaded", function () {
     tagList.appendChild(button);
   });
 
-  // Set "All" as the default tag and make it active
-  allButton.classList.add("tag-button-active");
-  filterProjects("All");
-
-  // Show a navigation hint to the user only when the card list is visible
+  // Navigation hint (existing logic)
   const hintMessage = document.createElement("div");
   hintMessage.textContent =
     "Use arrow keys to navigate between project cards and Enter to select.";
   hintMessage.className = "navigation-hint";
   document.body.appendChild(hintMessage);
 
-  // Setup IntersectionObserver to show the hint when cards are in view
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            hintMessage.style.display = "block";
-            const firstVisibleCard = document.querySelector(".project-card");
-            if (firstVisibleCard) {
-              firstVisibleCard.focus();
-            }
-          } else {
-            hintMessage.style.display = "none";
-          }
-        });
-      },
-      { threshold: 1.0 }
-    );
+  if ("IntersectionObserver" in window && window.innerWidth > 768) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -25% 0px",
+      threshold: 0.5,
+    };
 
-    // Ensure all project cards are observed if not on mobile
-    const isMobile = window.innerWidth <= 768;
-    if (!isMobile) {
-      projectCards.forEach((card) => {
-        if (card) {
-          observer.observe(card);
-        }
-      });
-    }
-  } else {
-    // Fallback for browsers that don't support IntersectionObserver
+    const observerCallback = (entries) => {
+      const isAnyCardVisible = entries.some((entry) => entry.isIntersecting);
+      hintMessage.style.display = isAnyCardVisible ? "block" : "none";
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    projectCards.forEach((card) => observer.observe(card));
+  } else if (!("IntersectionObserver" in window)) {
     const noObserverMessage = document.createElement("div");
     noObserverMessage.textContent =
-      "Your browser does not support IntersectionObserver. Key Navigation will be skiped.";
+      "Your browser does not support IntersectionObserver. Key Navigation will be skipped.";
     noObserverMessage.className = "navigation-hint-warning";
     document.body.appendChild(noObserverMessage);
-
-    // Remove the fallback message after 5 seconds
-    setTimeout(() => {
-      noObserverMessage.remove();
-    }, 5000);
-
+    setTimeout(() => noObserverMessage.remove(), 5000);
   }
-  // Remove hint after 5 seconds
+
+  // NEW: Separate observer to focus the first card once when it appears
+  if (firstCard) {
+    const focusObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          firstCard.focus();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    focusObserver.observe(firstCard);
+  }
+
+  // Remove hint message after 5 seconds
   setTimeout(() => {
     hintMessage.remove();
   }, 5000);
