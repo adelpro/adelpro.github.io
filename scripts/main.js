@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   emailLink.addEventListener("click", function (event) {
     event.preventDefault();
     if (emailLink) {
-      obscureEmail();
+      obscureEmail(emailLink);
     }
   });
   const projectCards = document.querySelectorAll(".project-card");
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Set "All" as the default tag and make it active
-  allButton.classList.add("tab-button-active");
+  allButton.classList.add("tag-button-active");
   filterProjects("All");
 
   // Show a navigation hint to the user only when the card list is visible
@@ -121,32 +121,47 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.appendChild(hintMessage);
 
   // Setup IntersectionObserver to show the hint when cards are in view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(
-      (entry) => {
-        if (entry.isIntersecting) {
-          hintMessage.style.display = "block";
-          const firstVisibleCard = document.querySelector(".project-card");
-          if (firstVisibleCard) {
-            firstVisibleCard.focus();
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hintMessage.style.display = "block";
+            const firstVisibleCard = document.querySelector(".project-card");
+            if (firstVisibleCard) {
+              firstVisibleCard.focus();
+            }
+          } else {
+            hintMessage.style.display = "none";
           }
-        } else {
-          hintMessage.style.display = "none";
-        }
+        });
       },
       { threshold: 1.0 }
     );
-  });
 
-  // Ensure all project cards are observed
-  const isMobile = window.innerWidth <= 768;
-  !isMobile &&
-    projectCards.forEach((card) => {
-      if (card) {
-        observer.observe(card);
-      }
-    });
+    // Ensure all project cards are observed if not on mobile
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+      projectCards.forEach((card) => {
+        if (card) {
+          observer.observe(card);
+        }
+      });
+    }
+  } else {
+    // Fallback for browsers that don't support IntersectionObserver
+    const noObserverMessage = document.createElement("div");
+    noObserverMessage.textContent =
+      "Your browser does not support IntersectionObserver. Key Navigation will be skiped.";
+    noObserverMessage.className = "navigation-hint-warning";
+    document.body.appendChild(noObserverMessage);
 
+    // Remove the fallback message after 5 seconds
+    setTimeout(() => {
+      noObserverMessage.remove();
+    }, 5000);
+
+  }
   // Remove hint after 5 seconds
   setTimeout(() => {
     hintMessage.remove();

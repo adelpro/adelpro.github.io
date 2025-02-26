@@ -87,7 +87,7 @@ export function filterProjects(tag, projectCards) {
   });
 }
 
-export function obscureEmail() {
+export function obscureEmail(emailLink) {
   const user = "adelpro";
   const domain = "gmail.com";
   emailLink.href = `mailto:${user}@${domain}`;
