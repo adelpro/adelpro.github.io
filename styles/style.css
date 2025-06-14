@@ -265,10 +265,6 @@ select:focus {
   color: var(--hashnode-color);
 }
 
-.social-icon.facebook:hover {
-  color: var(--facebook-color);
-}
-
 .social-icon.twitter:hover {
   color: var(--twitter-color);
 }
@@ -281,8 +277,8 @@ select:focus {
   color: var(--email-color);
 }
 
-.social-icon.messenger:hover {
-  color: var(--messenger-color);
+.social-icon.peerlist:hover {
+  background-color: var(--peerlist-color); 
 }
 
 /* Typography */
