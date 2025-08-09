@@ -62,6 +62,16 @@
       opacity: 0.9;
       color: var(--of-white-color);
     }
+
+    .hero-donate {
+      margin-top: 20px;
+    }
+    .hero-donate img {
+      transition: transform 0.3s ease;
+    }
+    .hero-donate img:hover {
+      transform: scale(1.05);
+    }
   </style>
   <!-- Preload stylesheet -->
   <link rel="preload" href="/styles/variables.css" as="style" media="all"
@@ -253,6 +263,11 @@
         <p itemprop="jobTitle">Web Applications Developer</p>
         <p itemprop="knowsAbout">(HTML │ CSS │ JS | React | React Native)</p>
         <span class="version">v2.6.0</span>
+        <div class="hero-donate">
+          <a href="https://www.buymeacoffee.com/adelbenyahia" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="50" width="180" loading="lazy">
+          </a>
+        </div>
       </section>
 
       <section class="filter-section">
