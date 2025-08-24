@@ -278,7 +278,7 @@ select:focus {
 }
 
 .social-icon.peerlist:hover {
-  background-color: var(--peerlist-color); 
+  color: var(--peerlist-color); 
 }
 
 /* Typography */
