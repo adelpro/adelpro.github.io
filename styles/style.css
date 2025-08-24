@@ -281,6 +281,10 @@ select:focus {
   color: var(--peerlist-color); 
 }
 
+.social-icon.gumroad:hover {
+  color: var(--gumroad-color); 
+}
+
 /* Typography */
 h1 {
   font-size: 2.5rem;
